@@ -1,4 +1,6 @@
-const router = require('express').Router;
+let express = require('express');
+const { routes } = require('../../app');
+let router = express.Router();
 
 const {
   getAllWords,
@@ -6,7 +8,8 @@ const {
   getAddWord,
   addWord,
   updateWord,
-  deleteWord
+  deleteWord,
+  getUpdateWord
 } = require('./controllers/wordController');
 
 //See all words in the browser
@@ -29,4 +32,5 @@ router.put('/update/:wordId', updateWord);
 //Delete Word from DB
 router.delete('/delete/:wordId', deleteWord);
 
-module.exports = route;
+
+module.exports = router;
